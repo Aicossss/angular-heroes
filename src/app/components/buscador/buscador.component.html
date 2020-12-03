@@ -1,0 +1,15 @@
+<h1>Buscando: <small> {{termino}}</small></h1>
+<hr>
+<div class="row animated fadeIn fast" *ngIf="heroes.length==0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen resultados con {{termino}}
+        </div>
+    </div>
+</div>
+<div class="card-columns">
+    <!-- [Nombre de la propiedad] = [Nombre de la variable local] -->
+    <!-- El heroeSeleccioando es un evento de heroe-tarjeta.component -->
+    <!-- El $event es para recibir el index que estoy emitiendo desde el output de heroe-tarjeta.component -->
+    <app-heroe-tarjeta [heroe]="heroe" [index]="heroe.idx" *ngFor="let heroe of heroes"></app-heroe-tarjeta>
+</div>
